@@ -25,9 +25,11 @@ jobs:
 
       
 
-      - name: Archive Build
-        run: |
-          tar --exclude='./build.tar.gz' --exclude='./.git' --exclude='./venv' -czf build.tar.gz .
+      - name: Wait before compression
+        run: sleep 5  # Adjust time if needed
+
+      - name: Compress build files
+        run: tar -czf build.tar.gz .
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
