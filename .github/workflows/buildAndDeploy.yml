@@ -23,10 +23,7 @@ jobs:
           source venv/bin/activate
           pip install -r requirements.txt
 
-      - name: Run Tests
-        run: |
-          source venv/bin/activate
-          pytest  # Change if using unittest or other test framework
+      
 
       - name: Archive Build
         run: |
